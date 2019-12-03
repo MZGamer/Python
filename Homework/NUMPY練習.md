@@ -1,4 +1,5 @@
-
+# 實作:
+https://colab.research.google.com/drive/101jB6ITD0ATdmx-9HG63w7NnBaDK-mKF
 # NumPy
 ```
 https://zh.wikipedia.org/wiki/NumPy
@@ -66,11 +67,11 @@ numpy.arange(start, stop, step, dtype)
 ```
 ```
 x = np.arange(5)  
-print (x) ##答案為何?
+print (x) ##答案為何? ([0 1 2 3 4])
 ```
 ```
 x = np.arange(5, dtype =  float)  
-print (x) ##答案為何?
+print (x) ##答案為何?([0. 1. 2. 3. 4.])
 ```
 ## 使用numpy.linspace創建等差數列
 ```
@@ -148,11 +149,11 @@ print(des)
 ```
 # 將底下np3改成2*3及3*2陣列
 np3 = np.array([1, 2, 3, 4, 5, 6])
-np3.dtype##答案為何?
+np3.dtype##答案為何?(dtype('int64'))
 
 np4 = np3.reshape([2, 3])
-print(np4.ndim, np4.shape, np4.dtype) ##答案為何?
-np4.dtype##答案為何?
+print(np4.ndim, np4.shape, np4.dtype) ##答案為何?(2 (2, 3) int64)
+np4.dtype##答案為何?(int64)
 
 np4
 ```
@@ -170,7 +171,7 @@ ar2.ravel()
 ## 2.2.改變陣列型別（bool、int、float、string）的運算
 ```
 np5 = np3.astype('int64')
-np3.dtype  ##答案為何?
+np3.dtype  ##答案為何?(dtype('int64'))
 ```
 ## 2.3.陣列索引與切片運算
 ```
@@ -178,32 +179,35 @@ np13 = np.array([1, 2, 3, 4, 5, 6])
 print(np13[2])  ##答案為何?
 
 np23 = np13.reshape([2, 3])
-print(np23[1, 0]) ##答案為何?
+print(np23[1, 0]) ##答案為何?(3)
 
 np3 = np.array([1, 2, 3, 4, 5, 6])
-print(np3 > 3) ##答案為何?
-print(np3[np3 > 3]) ##答案為何?
+print(np3 > 3) ##答案為何?([False False False  True  True  True])
+print(np3[np3 > 3]) ##答案為何?([4 5 6])
 
 # 陣列的切片運算:
 np10 = np.arange(10)
 s = slice(2,7,2)   # 從索引 2 開始到索引 7 停止，間隔為2
-print (np10[s]) ##答案為何?
+print (np10[s]) ##答案為何?([2 4 6])
 
 np10 = np.arange(10)  
 np11 = np10 [2:7:2]   # 從索引 2 開始到索引 7 停止，間隔為 2
-print(np11) ##答案為何?
+print(np11) ##答案為何?([2 4 6])
 
 np10 = np.arange(10)  
 np12 = np10 [2::2]  
-print(np12) ##答案為何?
+print(np12) ##答案為何?([2 4 6 8])
 ```
 ```
 import numpy as np
  
 a = np.array([[1,2,3],[3,4,5],[4,5,6]])  
-print (a[...,1])   ##答案為何?
-print (a[1,...])   ##答案為何?
+print (a[...,1])   ##答案為何?([2 4 5])
+print (a[1,...])   ##答案為何?([3 4 5])
 print (a[...,1:])   ##答案為何?
+([[2 3]
+ [4 5]
+ [5 6]])
 ```
 ```
 ar = np.array([[2,3,4],[9,8,7],[11,12,13]]); 
@@ -217,11 +221,15 @@ ar[2,-1]
 ar=2*np.arange(6); 
 ar
 
-ar[1:5:2]=?
-ar[1:6:2]=?
-ar[:4]=?
-ar[4:] =?
-ar[::3]=?
+ar[1:5:2]=[2 6]
+
+ar[1:6:2]=[ 2  6 10]
+
+ar[:4]=[0 2 4 6]
+
+ar[4:] =[ 8 10]
+
+ar[::3]=[0 6]
 
 ar[:3]=1;
 ar
@@ -233,8 +241,8 @@ ar
 ```
 np3 = np.array([1, 2, 3, 4, 5, 6])
 np3 = np3.reshape([2, 3])
-print(np3.sum(axis=1)) ##答案為何?
-print(np3.sum(axis=0)) ##答案為何?
+print(np3.sum(axis=1)) ##答案為何?([ 6 15])
+print(np3.sum(axis=0)) ##答案為何?([5 7 9])
 ```
 ## Single Array Iteration
 ```
