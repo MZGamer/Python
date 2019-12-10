@@ -1,3 +1,5 @@
+#實作
+https://colab.research.google.com/drive/1xLL6Tm0Dafm5L4GQyPHpN2EfnGmGDH95
 # 5_python基礎統計分析
 ```
 基礎統計分析：
